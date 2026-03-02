@@ -7,14 +7,7 @@ export default defineConfig({
   plugins: [
     react({
       // Enable Fast Refresh
-      fastRefresh: true,
-      // Babel plugins for optimization
-      babel: {
-        plugins: [
-          // Remove console.log in production
-          process.env.NODE_ENV === 'production' && ['transform-remove-console', { exclude: ['error', 'warn'] }]
-        ].filter(Boolean)
-      }
+      fastRefresh: true
     }),
     tailwindcss()
   ],
@@ -29,19 +22,8 @@ export default defineConfig({
     // Chunk size warning limit (500kb)
     chunkSizeWarningLimit: 500,
     
-    // Minification
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-        pure_funcs: ['console.log', 'console.info', 'console.debug'],
-        passes: 2
-      },
-      format: {
-        comments: false
-      }
-    },
+    // Minification using esbuild (built-in, no extra dependency)
+    minify: 'esbuild',
     
     // Rollup options for code splitting
     rollupOptions: {
@@ -54,8 +36,6 @@ export default defineConfig({
           'animation': ['framer-motion'],
           // Form libraries
           'forms': ['react-hook-form', '@hookform/resolvers', 'zod'],
-          // SEO libraries
-          'seo': ['react-helmet-async'],
           // DnD library
           'dnd': ['@dnd-kit/core', '@dnd-kit/sortable', '@dnd-kit/utilities'],
           // Icons
