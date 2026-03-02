@@ -1,5 +1,3 @@
-import { Helmet } from 'react-helmet-async';
-
 export const SEO = ({
   title = 'E-Incarnation Recycling Pvt. Ltd. - Professional E-Waste Management',
   description = 'Leading e-waste recycling company in India. We provide comprehensive EPR solutions, IT asset disposition, and environmentally responsible electronics recycling services across India.',
@@ -14,8 +12,8 @@ export const SEO = ({
   const fullUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}${window.location.pathname}`;
 
   return (
-    <Helmet>
-      {/* Primary Meta Tags */}
+    <>
+      {/* Primary Meta Tags - React 19 native support */}
       <title>{title}</title>
       <meta name="title" content={title} />
       <meta name="description" content={description} />
@@ -56,7 +54,7 @@ export const SEO = ({
       <meta name="mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    </Helmet>
+    </>
   );
 };
 

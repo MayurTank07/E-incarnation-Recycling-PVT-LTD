@@ -1,5 +1,3 @@
-import { Helmet } from 'react-helmet-async';
-
 export const OrganizationSchema = () => {
   const schema = {
     "@context": "https://schema.org",
@@ -28,11 +26,9 @@ export const OrganizationSchema = () => {
   };
 
   return (
-    <Helmet>
-      <script type="application/ld+json">
-        {JSON.stringify(schema)}
-      </script>
-    </Helmet>
+    <script type="application/ld+json">
+      {JSON.stringify(schema)}
+    </script>
   );
 };
 
@@ -54,11 +50,9 @@ export const ServiceSchema = ({ service }) => {
   };
 
   return (
-    <Helmet>
-      <script type="application/ld+json">
-        {JSON.stringify(schema)}
-      </script>
-    </Helmet>
+    <script type="application/ld+json">
+      {JSON.stringify(schema)}
+    </script>
   );
 };
 
@@ -75,11 +69,9 @@ export const BreadcrumbSchema = ({ items }) => {
   };
 
   return (
-    <Helmet>
-      <script type="application/ld+json">
-        {JSON.stringify(schema)}
-      </script>
-    </Helmet>
+    <script type="application/ld+json">
+      {JSON.stringify(schema)}
+    </script>
   );
 };
 
@@ -107,11 +99,9 @@ export const EventSchema = ({ event }) => {
   };
 
   return (
-    <Helmet>
-      <script type="application/ld+json">
-        {JSON.stringify(schema)}
-      </script>
-    </Helmet>
+    <script type="application/ld+json">
+      {JSON.stringify(schema)}
+    </script>
   );
 };
 

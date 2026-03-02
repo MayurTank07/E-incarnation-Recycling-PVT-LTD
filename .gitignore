@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+nano .gitignore
+# ya
+code .gitignore
+
+.env
+.env.*
