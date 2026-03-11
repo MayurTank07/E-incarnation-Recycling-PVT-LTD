@@ -1,18 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logo from "../assets/images/eincarnation-websitenlogo.png";
+import logo from "../assets/images/eincarnationlogo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  // Debug: Log logo import
-  useEffect(() => {
-    console.log('🔍 Logo imported:', logo);
-    console.log('🔍 Logo type:', typeof logo);
-  }, []);
 
   // Handle scroll to change background color
   useEffect(() => {
@@ -43,14 +38,8 @@ export default function Navbar() {
         <NavLink to="/" className="flex-shrink-0">
           <img 
             src={logo} 
-            alt="E-Incarnation Recycling" 
-            className="h-12 w-auto md:h-16 object-contain drop-shadow-lg"
-            style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))' }}
-            onLoad={() => console.log('✅ Logo loaded successfully')}
-            onError={(e) => {
-              console.error('❌ Logo failed to load:', e);
-              console.error('❌ Logo src:', logo);
-            }}
+            alt="E-Incarnation Recycling Logo" 
+            className="h-16 w-auto object-contain"
           />
         </NavLink>
 

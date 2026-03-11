@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import { useFooterData } from "../hooks/useFooterData";
 import { API_CONFIG } from "../config/api.config";
-import logo from "../assets/images/eincarnation-websitenlogo.png";
+import logo from "../assets/images/eincarnationlogo.png";
 
 const Footer = () => {
   const { footer, loading } = useFooterData();
@@ -55,12 +55,11 @@ const Footer = () => {
         
         {/* Column 1: Logo & Socials */}
         <div className="flex flex-col items-center sm:items-start text-center sm:text-left space-y-6">
-          <NavLink to="/" className="flex items-center p-2 bg-white/10 rounded-lg backdrop-blur-sm">
+          <NavLink to="/" className="flex items-center">
             <img 
               src={logo} 
-              alt="E-Incarnation Recycling" 
-              className="h-12 w-auto object-contain"
-              style={{ mixBlendMode: 'multiply' }}
+              alt="E-Incarnation Recycling Logo" 
+              className="h-16 w-auto object-contain"
             />
           </NavLink>
           <p className="text-sm text-gray-400 leading-relaxed max-w-[200px]">
