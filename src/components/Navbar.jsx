@@ -38,7 +38,8 @@ export default function Navbar() {
           <img 
             src={logo} 
             alt="E-Incarnation Recycling" 
-            className="h-12 w-auto md:h-16 object-contain"
+            className="h-12 w-auto md:h-16 object-contain drop-shadow-lg"
+            style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))' }}
           />
         </NavLink>
 

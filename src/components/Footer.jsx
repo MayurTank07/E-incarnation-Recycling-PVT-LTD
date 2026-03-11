@@ -55,11 +55,12 @@ const Footer = () => {
         
         {/* Column 1: Logo & Socials */}
         <div className="flex flex-col items-center sm:items-start text-center sm:text-left space-y-6">
-          <NavLink to="/" className="flex items-center">
+          <NavLink to="/" className="flex items-center p-2 bg-white/10 rounded-lg backdrop-blur-sm">
             <img 
               src={logo} 
               alt="E-Incarnation Recycling" 
               className="h-12 w-auto object-contain"
+              style={{ mixBlendMode: 'multiply' }}
             />
           </NavLink>
           <p className="text-sm text-gray-400 leading-relaxed max-w-[200px]">
