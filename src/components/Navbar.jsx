@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import logo from "../assets/images/eincarnation-websitenlogo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,11 +34,12 @@ export default function Navbar() {
     >
       <div className="flex items-center justify-between px-6 md:px-12 py-6 md:py-8 text-white">
         {/* Logo */}
-        <NavLink
-          to="/"
-          className="h-10 w-10 md:h-12 md:w-12 rounded-full bg-black border border-gray-700 flex items-center justify-center text-[8px] md:text-[10px] font-bold tracking-widest flex-shrink-0"
-        >
-          LOGO
+        <NavLink to="/" className="flex-shrink-0">
+          <img 
+            src={logo} 
+            alt="E-Incarnation Recycling" 
+            className="h-12 w-auto md:h-16 object-contain"
+          />
         </NavLink>
 
         {/* Desktop Links */}

@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { useFooterData } from "../hooks/useFooterData";
 import { API_CONFIG } from "../config/api.config";
+import logo from "../assets/images/eincarnation-websitenlogo.png";
 
 const Footer = () => {
   const { footer, loading } = useFooterData();
@@ -54,12 +55,13 @@ const Footer = () => {
         
         {/* Column 1: Logo & Socials */}
         <div className="flex flex-col items-center sm:items-start text-center sm:text-left space-y-6">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-              <span className="text-[10px] text-black font-black uppercase">Logo</span>
-            </div>
-            <span className="text-xl font-light tracking-tighter" aria-hidden="true">✕ ✕</span>
-          </div>
+          <NavLink to="/" className="flex items-center">
+            <img 
+              src={logo} 
+              alt="E-Incarnation Recycling" 
+              className="h-12 w-auto object-contain"
+            />
+          </NavLink>
           <p className="text-sm text-gray-400 leading-relaxed max-w-[200px]">
             All rights reserved<br />
             Copyright © 2026<br />

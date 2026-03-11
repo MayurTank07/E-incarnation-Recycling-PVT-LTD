@@ -3,21 +3,39 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTestimonials } from "../hooks/useTestimonials";
 import butterfly from "../assets/images/butterfly.png";
 import human from "../assets/images/human.png";
+import testi1 from "../assets/images/testi1.png";
+import testi2 from "../assets/images/testi2.png";
+import testi3 from "../assets/images/testi3.png";
+import testi4 from "../assets/images/testi4.png";
 
 const fallbackReviews = [
   {
     id: 1,
-    text: `Motion Elements is the best online site to download AE templates for free. Choose from free templates for After Effects, free videos and free music. Our elements are commission-free, you can use them in various projects, in any type of media around the world. Get Free Bookmarklet Items.`,
-    name: "Lihov Sergey",
-    role: "UI/UX Designer",
-    avatar: human,
+    text: `My experience with e incarnation was very good... I had some e waste lying around so I contacted them. Within two days they picked up my e waste free of cost. These people are doing a great job and it's important that our e-waste is recycled properly.`,
+    name: "Javed Khan",
+    role: "Customer",
+    avatar: testi1,
   },
   {
     id: 2,
-    text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
-    name: "Nitin Sharma",
-    role: "React Developer",
-    avatar: human,
+    text: `Their staff is not only friendly but also highly skilled and they always give a quick response. Very well working towards environment protection.`,
+    name: "Nisha Singh",
+    role: "Customer",
+    avatar: testi2,
+  },
+  {
+    id: 3,
+    text: `I was completely impressed with their professionalism and customer service. They are doing great work and the employees' behaviour is also very good.`,
+    name: "Ishwar Pawar",
+    role: "Customer",
+    avatar: testi3,
+  },
+  {
+    id: 4,
+    text: `Best service, friendly staff, and a big step of revolution towards a safe and healthy environment.`,
+    name: "Wajid Ali Khan",
+    role: "Customer",
+    avatar: testi4,
   },
 ];
 
