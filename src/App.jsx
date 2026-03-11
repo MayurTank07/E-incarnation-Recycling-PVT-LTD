@@ -39,6 +39,7 @@ export default function App() {
           <Route path="/epr" element={<EPR />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/adminlogin" element={<AdminLogin />} />
+          <Route path="/adminLogin" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
         </Routes>
       </Suspense>
