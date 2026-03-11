@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
-import { MessageCircle } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { MessageCircle, X } from 'lucide-react';
+import { API_CONFIG } from '../config/api.config';
 
 const WhatsAppButton = () => {
   const [settings, setSettings] = useState(null);
@@ -8,7 +9,7 @@ const WhatsAppButton = () => {
   useEffect(() => {
     const fetchSettings = async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/whatsapp-settings');
+        const response = await fetch(`${API_CONFIG.BASE_URL}/whatsapp-settings`);
         const data = await response.json();
         if (data.success) {
           setSettings(data.data);

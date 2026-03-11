@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { API_CONFIG } from '../config/api.config';
 
 export function useEprPage() {
   const [eprData, setEprData] = useState(null);
@@ -8,7 +9,7 @@ export function useEprPage() {
   useEffect(() => {
     const fetchEprPage = async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/epr-page');
+        const response = await fetch(`${API_CONFIG.BASE_URL}/epr-page`);
         const data = await response.json();
         
         if (data.success) {

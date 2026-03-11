@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { API_CONFIG } from '../config/api.config';
 
 export function useHeroStats() {
   const [stats, setStats] = useState({
@@ -14,7 +15,7 @@ export function useHeroStats() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/hero-stats');
+        const response = await fetch(`${API_CONFIG.BASE_URL}/hero-stats`);
         const data = await response.json();
         
         if (data.success && data.data) {

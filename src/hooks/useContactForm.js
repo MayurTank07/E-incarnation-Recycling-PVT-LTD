@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { API_CONFIG } from '../config/api.config';
 
 export function useContactForm(schema, source = 'contact_page') {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -33,7 +34,7 @@ export function useContactForm(schema, source = 'contact_page') {
     setSubmitStatus(null);
 
     try {
-      const response = await fetch('http://localhost:5001/api/contact-forms', {
+      const response = await fetch(`${API_CONFIG.BASE_URL}/contact-forms`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

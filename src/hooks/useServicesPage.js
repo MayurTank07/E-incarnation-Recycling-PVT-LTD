@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { API_CONFIG } from '../config/api.config';
 
 export function useServicesPage() {
   const [servicesPageData, setServicesPageData] = useState(null);
@@ -8,7 +9,7 @@ export function useServicesPage() {
   useEffect(() => {
     const fetchServicesPage = async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/services-page');
+        const response = await fetch(`${API_CONFIG.BASE_URL}/services-page`);
         const data = await response.json();
         
         if (data.success) {

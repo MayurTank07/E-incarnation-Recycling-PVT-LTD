@@ -1,3 +1,5 @@
+import { API_CONFIG } from '../config/api.config';
+
 export const SEO = ({
   title = 'E-Incarnation Recycling Pvt. Ltd. - Professional E-Waste Management',
   description = 'Leading e-waste recycling company in India. We provide comprehensive EPR solutions, IT asset disposition, and environmentally responsible electronics recycling services across India.',
@@ -8,7 +10,7 @@ export const SEO = ({
   twitterCard = 'summary_large_image',
   noindex = false
 }) => {
-  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://eincarnation.in';
+  const siteUrl = API_CONFIG.SITE_URL;
   const fullUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}${window.location.pathname}`;
 
   return (

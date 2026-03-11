@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { API_CONFIG } from '../config/api.config';
 
 export function useFooterData() {
   const [footer, setFooter] = useState({
@@ -11,7 +12,7 @@ export function useFooterData() {
   useEffect(() => {
     const fetchFooter = async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/footer');
+        const response = await fetch(`${API_CONFIG.BASE_URL}/footer`);
         const data = await response.json();
         
         if (data.success) {

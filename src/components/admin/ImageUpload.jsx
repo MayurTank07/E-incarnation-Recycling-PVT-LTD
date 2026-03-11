@@ -1,8 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { Upload, X, Image as ImageIcon, Loader } from 'lucide-react';
 import { api } from '../../utils/api';
+import { API_CONFIG } from '../../config/api.config';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
+const API_BASE_URL = API_CONFIG.BASE_URL;
 
 const ImageUpload = ({ 
   label = "Upload Image", 

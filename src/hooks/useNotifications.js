@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { API_CONFIG } from '../config/api.config';
 
 export function useNotifications() {
   const [unreadCount, setUnreadCount] = useState({
@@ -13,7 +14,7 @@ export function useNotifications() {
       const token = localStorage.getItem('adminToken');
       if (!token) return;
 
-      const response = await fetch('http://localhost:5001/api/contact-forms/unread-count', {
+      const response = await fetch(`${API_CONFIG.BASE_URL}/contact-forms/unread-count`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { API_CONFIG } from '../config/api.config';
 
 export function useClients() {
   const [clients, setClients] = useState([]);
@@ -8,7 +9,7 @@ export function useClients() {
   useEffect(() => {
     const fetchClients = async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/clients');
+        const response = await fetch(`${API_CONFIG.BASE_URL}/clients`);
         const data = await response.json();
         
         if (data.success) {

@@ -13,6 +13,7 @@ import {
   Link as LinkIcon,
 } from "lucide-react";
 import { useFooterData } from "../hooks/useFooterData";
+import { API_CONFIG } from "../config/api.config";
 
 const Footer = () => {
   const { footer, loading } = useFooterData();
@@ -21,7 +22,7 @@ const Footer = () => {
   useEffect(() => {
     const fetchSocialMedia = async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/social-media/active');
+        const response = await fetch(`${API_CONFIG.BASE_URL}/social-media/active`);
         const data = await response.json();
         if (data.success) {
           setSocialMedia(data.data);

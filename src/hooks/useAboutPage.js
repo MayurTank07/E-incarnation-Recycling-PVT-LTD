@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { API_CONFIG } from '../config/api.config';
 
 export function useAboutPage() {
   const [aboutData, setAboutData] = useState(null);
@@ -8,7 +9,7 @@ export function useAboutPage() {
   useEffect(() => {
     const fetchAboutPage = async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/about-page');
+        const response = await fetch(`${API_CONFIG.BASE_URL}/about-page`);
         const data = await response.json();
         
         if (data.success) {

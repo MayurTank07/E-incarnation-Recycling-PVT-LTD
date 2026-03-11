@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { API_CONFIG } from '../config/api.config';
 
 export function useEvents() {
   const [events, setEvents] = useState([]);
@@ -8,7 +9,7 @@ export function useEvents() {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/events');
+        const response = await fetch(`${API_CONFIG.BASE_URL}/events`);
         const data = await response.json();
         
         if (data.success) {
