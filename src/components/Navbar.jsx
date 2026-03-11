@@ -8,6 +8,12 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
+  // Debug: Log logo import
+  useEffect(() => {
+    console.log('🔍 Logo imported:', logo);
+    console.log('🔍 Logo type:', typeof logo);
+  }, []);
+
   // Handle scroll to change background color
   useEffect(() => {
     const handleScroll = () => {
@@ -40,6 +46,11 @@ export default function Navbar() {
             alt="E-Incarnation Recycling" 
             className="h-12 w-auto md:h-16 object-contain drop-shadow-lg"
             style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))' }}
+            onLoad={() => console.log('✅ Logo loaded successfully')}
+            onError={(e) => {
+              console.error('❌ Logo failed to load:', e);
+              console.error('❌ Logo src:', logo);
+            }}
           />
         </NavLink>
 
