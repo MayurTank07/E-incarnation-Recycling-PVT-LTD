@@ -1,10 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import heroImage from "../assets/images/hero.png";
 import { useHeroStats } from "../hooks/useHeroStats";
 import { useCounterAnimation } from "../hooks/useCounterAnimation";
 
 const HeroMain = () => {
+  const navigate = useNavigate();
   const { stats, loading } = useHeroStats();
   
   // Counter animations for stats (1200ms for faster counting)
@@ -80,7 +82,10 @@ const HeroMain = () => {
               transition={{ duration: 0.6, delay: 0.7 }}
               className="mt-6 lg:mt-8"
             >
-              <button className="group bg-[#87BBD7] hover:bg-[#1A0185] hover:text-white text-[#000000] px-8 py-3 rounded-full text-xs sm:text-sm font-bold tracking-widest transition-all duration-300 shadow-md hover:shadow-xl hover:scale-105 flex items-center gap-3 mx-auto lg:mx-0 uppercase">
+              <button 
+                onClick={() => navigate('/about')}
+                className="group bg-[#87BBD7] hover:bg-[#1A0185] hover:text-white text-[#000000] px-8 py-3 rounded-full text-xs sm:text-sm font-bold tracking-widest transition-all duration-300 shadow-md hover:shadow-xl hover:scale-105 flex items-center gap-3 mx-auto lg:mx-0 uppercase"
+              >
                 {stats.heroButtonText || "Know More"} <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </button>
             </motion.div>
