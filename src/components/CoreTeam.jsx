@@ -80,7 +80,7 @@ export default function CoreTeam() {
                     transition={{ duration: 0.7 }}
                     viewport={{ once: true }}
                   >
-                    <div className="w-full h-[180px] sm:h-[260px] md:h-[320px] bg-[#EEEBD9] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden">
+                    <div className="relative w-full h-[280px] sm:h-[360px] md:h-[440px] lg:h-[500px] bg-[#EEEBD9] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden">
                       {landscapeImage.image && (
                         <img 
                           src={landscapeImage.image} 
@@ -88,19 +88,25 @@ export default function CoreTeam() {
                           className="w-full h-full object-cover"
                         />
                       )}
-                    </div>
-                    {(landscapeImage.title || landscapeImage.description) && (
-                      <div className="max-w-4xl text-center md:text-left mx-auto md:mx-0 mt-6 md:mt-8">
-                        {landscapeImage.title && (
-                          <h2 className="text-3xl md:text-[52px] font-semibold text-[#1e1494] mb-4">
+                      {/* Overlay gradient for better text visibility */}
+                      {landscapeImage.title && (
+                        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-transparent" />
+                      )}
+                      {/* Title centered over image */}
+                      {landscapeImage.title && (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center px-6 drop-shadow-2xl">
                             {landscapeImage.title}
                           </h2>
-                        )}
-                        {landscapeImage.description && (
-                          <p className="text-sm md:text-[15px] leading-relaxed text-gray-700">
-                            {landscapeImage.description}
-                          </p>
-                        )}
+                        </div>
+                      )}
+                    </div>
+                    {/* Description below image if exists */}
+                    {landscapeImage.description && (
+                      <div className="max-w-4xl text-center md:text-left mx-auto md:mx-0 mt-6 md:mt-8">
+                        <p className="text-sm md:text-[15px] leading-relaxed text-gray-700">
+                          {landscapeImage.description}
+                        </p>
                       </div>
                     )}
                   </motion.div>
