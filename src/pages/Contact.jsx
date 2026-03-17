@@ -6,13 +6,11 @@ import { BreadcrumbSchema } from "../components/StructuredData";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/Footer";
 import Input from "../components/forms/Input";
-import AutocompleteInput from "../components/forms/AutocompleteInput";
 import Textarea from "../components/forms/Textarea";
 import Toast from "../components/common/Toast";
 import { useContactForm } from "../hooks/useContactForm";
 import { useContactPage } from "../hooks/useContactPage";
 import { contactPageFormSchema } from "../utils/formValidation";
-import { INDIAN_CITIES, INDIAN_STATES, filterLocations } from "../data/indiaLocations";
 import robot from "../assets/images/robot.png";
 
 function ContactFormSection({ robot }) {
@@ -26,17 +24,8 @@ function ContactFormSection({ robot }) {
     isSubmitting, 
     submitStatus,
     handleCaptchaChange,
-    handleCaptchaExpired,
-    setValue 
+    handleCaptchaExpired 
   } = useContactForm(contactPageFormSchema);
-
-  const handleCityInput = (query) => {
-    return filterLocations(INDIAN_CITIES, query);
-  };
-
-  const handleStateInput = (query) => {
-    return filterLocations(INDIAN_STATES, query);
-  };
 
   React.useEffect(() => {
     if (submitStatus) {
@@ -88,23 +77,19 @@ function ContactFormSection({ robot }) {
           error={errors.phone?.message}
           required
         />
-        <AutocompleteInput
+        <Input
           name="city"
           placeholder="Select City"
           variant="contact"
           register={register}
-          setValue={setValue}
           error={errors.city?.message}
-          onInputChange={handleCityInput}
         />
-        <AutocompleteInput
+        <Input
           name="state"
           placeholder="Select State"
           variant="contact"
           register={register}
-          setValue={setValue}
           error={errors.state?.message}
-          onInputChange={handleStateInput}
         />
 
         <div className="md:col-span-2">
