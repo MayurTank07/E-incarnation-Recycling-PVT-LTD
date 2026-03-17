@@ -80,8 +80,6 @@ const AdminLogin = () => {
                   className="w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#1A0185] focus:outline-none transition-colors"
                   placeholder="admin@eincarnation.com"
                   autoComplete="email"
-                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                  title="Please enter a valid email address (e.g., admin@eincarnation.com)"
                   required
                 />
               </div>
