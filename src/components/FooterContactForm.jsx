@@ -5,6 +5,7 @@ import { contactFormSchema } from "../utils/formValidation";
 import Input from "./forms/Input";
 import Textarea from "./forms/Textarea";
 import Toast from "./common/Toast";
+import { INDIAN_CITIES, INDIAN_STATES, filterLocations } from "../data/indiaLocations";
 
 const FooterContactForm = () => {
   const [showToast, setShowToast] = useState(false);

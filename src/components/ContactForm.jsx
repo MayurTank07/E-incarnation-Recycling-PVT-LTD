@@ -3,8 +3,10 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { useContactForm } from "../hooks/useContactForm";
 import { contactFormSchema } from "../utils/formValidation";
 import Input from "./forms/Input";
+import AutocompleteInput from "./forms/AutocompleteInput";
 import Textarea from "./forms/Textarea";
 import Toast from "./common/Toast";
+import { INDIAN_CITIES, INDIAN_STATES, filterLocations } from "../data/indiaLocations";
 
 const ContactForm = () => {
   const [showToast, setShowToast] = useState(false);
@@ -17,8 +19,17 @@ const ContactForm = () => {
     isSubmitting, 
     submitStatus,
     handleCaptchaChange,
-    handleCaptchaExpired 
+    handleCaptchaExpired,
+    setValue 
   } = useContactForm(contactFormSchema, 'footer_form');
+
+  const handleCityInput = (query) => {
+    return filterLocations(INDIAN_CITIES, query);
+  };
+
+  const handleStateInput = (query) => {
+    return filterLocations(INDIAN_STATES, query);
+  };
 
   React.useEffect(() => {
     if (submitStatus) {
@@ -85,19 +96,23 @@ const ContactForm = () => {
               error={errors.phone?.message}
               required
             />
-            <Input
+            <AutocompleteInput
               name="city"
               placeholder="CITY"
               variant="default"
               register={register}
+              setValue={setValue}
               error={errors.city?.message}
+              onInputChange={handleCityInput}
             />
-            <Input
+            <AutocompleteInput
               name="state"
               placeholder="STATE"
               variant="default"
               register={register}
+              setValue={setValue}
               error={errors.state?.message}
+              onInputChange={handleStateInput}
             />
           </div>
 

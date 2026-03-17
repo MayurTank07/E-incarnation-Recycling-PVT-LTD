@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Shield, FileCheck, Recycle, Award, CheckCircle2 } from "lucide-react";
 import SEO from "../components/SEO";
 import { BreadcrumbSchema, ServiceSchema } from "../components/StructuredData";
@@ -12,6 +13,7 @@ import WhyChooseUsEPR from "../components/WhyChooseUsEPR";
 import { useEprPage } from "../hooks/useEprPage";
 
 export default function EPR() {
+  const navigate = useNavigate();
   const { eprData, loading } = useEprPage();
   
   const seoData = (
@@ -158,7 +160,11 @@ export default function EPR() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Button variant="primary" size="lg">
+              <Button 
+                variant="primary" 
+                size="lg"
+                onClick={() => navigate('/contact')}
+              >
                 Get EPR Authorization <span>→</span>
               </Button>
               <a 
