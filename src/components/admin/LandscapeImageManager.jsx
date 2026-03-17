@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { api } from '../../utils/api';
-import { Save, Image as ImageIcon, Trash2 } from 'lucide-react';
+import { Save, Image as ImageIcon, Trash2, Crop } from 'lucide-react';
 import ImageUpload from './ImageUpload';
+import ImageCropModal from './ImageCropModal';
+import { createCroppedImage, blobToFile } from '../../utils/cropImage';
 
 const LandscapeImageManager = () => {
   const [aboutData, setAboutData] = useState(null);
@@ -12,6 +14,9 @@ const LandscapeImageManager = () => {
     image: '',
     imagePublicId: ''
   });
+  const [showCropModal, setShowCropModal] = useState(false);
+  const [tempImage, setTempImage] = useState(null);
+  const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
     fetchData();
@@ -51,6 +56,49 @@ const LandscapeImageManager = () => {
     }
   };
 
+  const handleImageSelect = (imageData) => {
+    if (imageData) {
+      setTempImage(imageData.url);
+      setShowCropModal(true);
+    }
+  };
+
+  const handleCropComplete = async (cropData) => {
+    try {
+      setUploading(true);
+      const croppedBlob = await createCroppedImage(
+        tempImage,
+        cropData.croppedAreaPixels,
+        cropData.rotation
+      );
+      
+      const croppedFile = blobToFile(croppedBlob, 'landscape-cropped.jpg');
+      
+      const formDataUpload = new FormData();
+      formDataUpload.append('image', croppedFile);
+      formDataUpload.append('folder', 'eincarnation/about/landscape');
+      
+      const response = await api.post('/upload/image', formDataUpload, {
+        headers: { 'Content-Type': 'multipart/form-data' }
+      });
+      
+      if (response.data.success) {
+        setFormData({
+          ...formData,
+          image: response.data.url,
+          imagePublicId: response.data.publicId
+        });
+        setShowCropModal(false);
+        setTempImage(null);
+      }
+    } catch (error) {
+      console.error('Error uploading cropped image:', error);
+      alert('Failed to upload cropped image');
+    } finally {
+      setUploading(false);
+    }
+  };
+
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
@@ -61,6 +109,26 @@ const LandscapeImageManager = () => {
 
   return (
     <div className="space-y-6">
+      {showCropModal && tempImage && (
+        <ImageCropModal
+          image={tempImage}
+          onCropComplete={handleCropComplete}
+          onClose={() => {
+            setShowCropModal(false);
+            setTempImage(null);
+          }}
+          aspectRatio={3 / 1}
+        />
+      )}
+      
+      {uploading && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+          <div className="bg-white rounded-lg p-6 flex flex-col items-center gap-4">
+            <div className="animate-spin rounded-full h-12 w-12 border-4 border-gray-300 border-t-[#1A0185]"></div>
+            <p className="text-gray-700 font-medium">Uploading cropped image...</p>
+          </div>
+        </div>
+      )}
       <div className="bg-white rounded-xl shadow-sm p-6">
         <div className="flex items-center gap-2 mb-6">
           <ImageIcon size={28} className="text-[#1A0185]" />
@@ -97,20 +165,30 @@ const LandscapeImageManager = () => {
           </div>
 
           <div>
-            <ImageUpload
-              label="Landscape Image *"
-              currentImage={formData.image}
-              onImageChange={(imageData) => {
-                setFormData({ 
-                  ...formData, 
-                  image: imageData ? imageData.url : '',
-                  imagePublicId: imageData ? imageData.publicId : ''
-                });
-              }}
-              folder="eincarnation/about/landscape"
-            />
+            <label className="block text-sm font-medium mb-2">Landscape Image *</label>
+            <div className="space-y-3">
+              <ImageUpload
+                label=""
+                currentImage={formData.image}
+                onImageChange={handleImageSelect}
+                folder="eincarnation/about/landscape"
+              />
+              {formData.image && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setTempImage(formData.image);
+                    setShowCropModal(true);
+                  }}
+                  className="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 flex items-center justify-center gap-2 transition-colors"
+                >
+                  <Crop size={18} />
+                  Crop & Reposition Image
+                </button>
+              )}
+            </div>
             <p className="text-xs text-gray-500 mt-2">
-              Recommended size: 1200x400px or wider. This image will be displayed full-width on the About page.
+              Recommended size: 1200x400px or wider. Upload an image, then use the crop tool to position it perfectly.
             </p>
           </div>
 
