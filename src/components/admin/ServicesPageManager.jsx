@@ -12,6 +12,7 @@ const ServicesPageManager = () => {
     title: '',
     description: '',
     image: '',
+    imagePublicId: '',
     features: [''],
     order: 0
   });
@@ -66,7 +67,7 @@ const ServicesPageManager = () => {
       await api.post('/services-page/sections', formData);
       alert('Section added successfully!');
       setShowAddSection(false);
-      setFormData({ title: '', description: '', image: '', features: [''], order: 0 });
+      setFormData({ title: '', description: '', image: '', imagePublicId: '', features: [''], order: 0 });
       fetchPageData();
     } catch (error) {
       console.error('Error adding section:', error);
@@ -106,6 +107,7 @@ const ServicesPageManager = () => {
       title: section.title,
       description: section.description,
       image: section.image,
+      imagePublicId: section.imagePublicId || '',
       features: section.features || [''],
       order: section.order
     });
@@ -187,12 +189,18 @@ const ServicesPageManager = () => {
                 rows="3"
                 required
               />
-              <input
-                type="text"
-                placeholder="Image URL"
-                value={formData.image}
-                onChange={(e) => setFormData({...formData, image: e.target.value})}
-                className="w-full px-4 py-2 border rounded-lg"
+              <ImageUpload
+                label="Section Image"
+                currentImage={formData.image}
+                onImageChange={(imageData) => {
+                  setFormData({
+                    ...formData,
+                    image: imageData ? imageData.url : '',
+                    imagePublicId: imageData ? imageData.publicId : ''
+                  });
+                }}
+                folder="eincarnation/services"
+                maxSize={2}
               />
               <div className="flex gap-2">
                 <button type="submit" className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">
@@ -228,6 +236,19 @@ const ServicesPageManager = () => {
                     className="w-full px-4 py-2 border rounded-lg"
                     rows="3"
                   />
+                  <ImageUpload
+                    label="Section Image"
+                    currentImage={formData.image}
+                    onImageChange={(imageData) => {
+                      setFormData({
+                        ...formData,
+                        image: imageData ? imageData.url : '',
+                        imagePublicId: imageData ? imageData.publicId : ''
+                      });
+                    }}
+                    folder="eincarnation/services"
+                    maxSize={2}
+                  />
                   <div className="flex gap-2">
                     <button type="submit" className="bg-[#1A0185] text-white px-4 py-2 rounded-lg">
                       Save
@@ -243,6 +264,13 @@ const ServicesPageManager = () => {
                 </form>
               ) : (
                 <div>
+                  {section.image && (
+                    <img 
+                      src={section.image} 
+                      alt={section.title}
+                      className="w-full h-48 object-cover rounded-lg mb-4"
+                    />
+                  )}
                   <h3 className="text-lg font-bold mb-2">{section.title}</h3>
                   <p className="text-gray-600 mb-4">{section.description}</p>
                   <div className="flex gap-2">

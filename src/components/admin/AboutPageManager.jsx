@@ -7,7 +7,6 @@ const AboutPageManager = () => {
   const [pageData, setPageData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [editingMember, setEditingMember] = useState(null);
-  const [showAddMember, setShowAddMember] = useState(false);
   const [memberForm, setMemberForm] = useState({
     name: '',
     position: '',
@@ -53,20 +52,6 @@ const AboutPageManager = () => {
     } catch (error) {
       console.error('Error updating page:', error);
       alert('Failed to update page');
-    }
-  };
-
-  const handleAddTeamMember = async (e) => {
-    e.preventDefault();
-    try {
-      await api.post('/about-page/team', memberForm);
-      alert('Team member added successfully!');
-      setShowAddMember(false);
-      setMemberForm({ name: '', position: '', bio: '', image: '', linkedin: '' });
-      fetchPageData();
-    } catch (error) {
-      console.error('Error adding team member:', error);
-      alert('Failed to add team member');
     }
   };
 
@@ -224,75 +209,10 @@ const AboutPageManager = () => {
           <h2 className="text-xl font-bold flex items-center gap-2">
             <Users size={24} /> Team Members
           </h2>
-          <button
-            onClick={() => setShowAddMember(true)}
-            className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 flex items-center gap-2"
-          >
-            <Plus size={18} /> Add Team Member
-          </button>
+          <p className="text-sm text-gray-600 italic">
+            Manage team members in "Core Team & Landscape" section
+          </p>
         </div>
-
-        {/* Add Team Member Form */}
-        {showAddMember && (
-          <form onSubmit={handleAddTeamMember} className="mb-6 p-4 border rounded-lg bg-gray-50">
-            <div className="space-y-4">
-              <input
-                type="text"
-                placeholder="Name"
-                value={memberForm.name}
-                onChange={(e) => setMemberForm({...memberForm, name: e.target.value})}
-                className="w-full px-4 py-2 border rounded-lg"
-                required
-              />
-              <input
-                type="text"
-                placeholder="Position"
-                value={memberForm.position}
-                onChange={(e) => setMemberForm({...memberForm, position: e.target.value})}
-                className="w-full px-4 py-2 border rounded-lg"
-                required
-              />
-              <textarea
-                placeholder="Bio"
-                value={memberForm.bio}
-                onChange={(e) => setMemberForm({...memberForm, bio: e.target.value})}
-                className="w-full px-4 py-2 border rounded-lg"
-                rows="3"
-              />
-              <ImageUpload
-                label="Team Member Photo"
-                currentImage={memberForm.image}
-                onImageChange={(imageData) => {
-                  setMemberForm({ 
-                    ...memberForm, 
-                    image: imageData ? imageData.url : '',
-                    imagePublicId: imageData ? imageData.publicId : ''
-                  });
-                }}
-                folder="eincarnation/team"
-              />
-              <input
-                type="text"
-                placeholder="LinkedIn URL"
-                value={memberForm.linkedin}
-                onChange={(e) => setMemberForm({...memberForm, linkedin: e.target.value})}
-                className="w-full px-4 py-2 border rounded-lg"
-              />
-              <div className="flex gap-2">
-                <button type="submit" className="bg-green-600 text-white px-4 py-2 rounded-lg">
-                  Add Member
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setShowAddMember(false)}
-                  className="bg-gray-400 text-white px-4 py-2 rounded-lg"
-                >
-                  Cancel
-                </button>
-              </div>
-            </div>
-          </form>
-        )}
 
         {/* Team Members Grid */}
         <div className="grid gap-4">

@@ -1,10 +1,13 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import historyMain from "../assets/images/history-main.png";
 import historyOverlay from "../assets/images/history-overlay.png";
 import { useAboutPage } from "../hooks/useAboutPage";
+import Modal from "./common/Modal";
 
 export default function OurHistory() {
   const { aboutData, loading } = useAboutPage();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const historyData = aboutData?.history || {
     title: "Our History",
@@ -66,6 +69,7 @@ export default function OurHistory() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
               viewport={{ once: true }}
+              onClick={() => setIsModalOpen(true)}
               className="group flex items-center gap-3 rounded-full bg-[#9bc9df] px-10 py-3 text-[15px] font-bold tracking-tight text-gray-900 transition-all hover:brightness-95 active:scale-95 shadow-sm"
             >
               KNOW MORE
@@ -127,6 +131,86 @@ export default function OurHistory() {
 
         </div>
       </div>
+
+      {/* Modal for detailed history information */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Our History"
+        maxWidth="max-w-4xl"
+      >
+        <div className="space-y-6">
+          <div className="prose prose-lg max-w-none">
+            <p className="text-gray-700 leading-relaxed mb-6">
+              {historyData.description}
+            </p>
+
+            <h3 className="text-xl font-bold text-[#1A0185] mb-4">Our Journey</h3>
+            <div className="space-y-4 text-gray-700">
+              <div className="border-l-4 border-[#1A0185] pl-4 py-2">
+                <h4 className="font-bold text-[#1A0185] mb-2">Foundation</h4>
+                <p>Started with a vision to transform India's e-waste management landscape, addressing the growing environmental concerns of electronic waste disposal.</p>
+              </div>
+              
+              <div className="border-l-4 border-[#1A0185] pl-4 py-2">
+                <h4 className="font-bold text-[#1A0185] mb-2">Growth & Expansion</h4>
+                <p>Expanded from a small operation to become one of the country's leading authorized e-waste recyclers, serving clients across India.</p>
+              </div>
+              
+              <div className="border-l-4 border-[#1A0185] pl-4 py-2">
+                <h4 className="font-bold text-[#1A0185] mb-2">Certifications & Compliance</h4>
+                <p>Achieved ISO certifications and full regulatory compliance, ensuring the highest standards in e-waste recycling and data security.</p>
+              </div>
+              
+              <div className="border-l-4 border-[#1A0185] pl-4 py-2">
+                <h4 className="font-bold text-[#1A0185] mb-2">Today</h4>
+                <p>Leading the industry with innovative recycling practices, zero landfill commitment, and a strong focus on environmental sustainability.</p>
+              </div>
+            </div>
+
+            <h3 className="text-xl font-bold text-[#1A0185] mt-8 mb-4">Our Commitment</h3>
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-start gap-3">
+                <span className="text-[#1A0185] font-bold">✓</span>
+                <span>Environmental sustainability and responsible recycling practices</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-[#1A0185] font-bold">✓</span>
+                <span>Continuous innovation in recycling technology</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-[#1A0185] font-bold">✓</span>
+                <span>Building a circular economy for electronic materials</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-[#1A0185] font-bold">✓</span>
+                <span>Creating awareness about proper e-waste disposal</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 mt-6">
+            {historyData.image1 && (
+              <div className="rounded-2xl overflow-hidden">
+                <img
+                  src={historyData.image1}
+                  alt="E-Incarnation History"
+                  className="w-full h-48 object-cover"
+                />
+              </div>
+            )}
+            {historyData.image2 && (
+              <div className="rounded-2xl overflow-hidden">
+                <img
+                  src={historyData.image2}
+                  alt="E-Incarnation Growth"
+                  className="w-full h-48 object-cover"
+                />
+              </div>
+            )}
+          </div>
+        </div>
+      </Modal>
     </section>
   );
 }

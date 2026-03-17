@@ -227,19 +227,34 @@ export default function EPR() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {eprServices.map((service, idx) => (
-                <Card key={idx} padding="lg" rounded="2xl">
-                  <div className="bg-[#1A0185] w-14 h-14 rounded-full mb-5 flex items-center justify-center text-white">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-lg font-bold text-[#1A0185] mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-[#060C0C] leading-relaxed">
-                    {service.description}
-                  </p>
-                </Card>
-              ))}
+              {eprServices.map((service, idx) => {
+                // Map icon names to actual icon components
+                const iconMap = {
+                  'Shield': <Shield size={28} />,
+                  'FileCheck': <FileCheck size={28} />,
+                  'Recycle': <Recycle size={28} />,
+                  'Award': <Award size={28} />
+                };
+                
+                // Use mapped icon or fallback to service.icon if it's already a component
+                const displayIcon = typeof service.icon === 'string' 
+                  ? iconMap[service.icon] || <Shield size={28} />
+                  : service.icon;
+
+                return (
+                  <Card key={idx} padding="lg" rounded="2xl">
+                    <div className="bg-[#1A0185] w-14 h-14 rounded-full mb-5 flex items-center justify-center text-white">
+                      {displayIcon}
+                    </div>
+                    <h3 className="text-lg font-bold text-[#1A0185] mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm text-[#060C0C] leading-relaxed">
+                      {service.description}
+                    </p>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -296,35 +311,46 @@ export default function EPR() {
                 </ul>
               </div>
 
-              <Card className="bg-[#1A0185] text-white" padding="xl" rounded="3xl">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                  Ready to Get Started?
-                </h3>
-                <p className="text-white/90 mb-6 leading-relaxed">
-                  Contact our EPR compliance team for a free consultation. 
-                  We'll help you understand your obligations and create a customized compliance plan.
-                </p>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <div className="bg-white/20 p-2 rounded-lg">
-                      <Shield size={20} />
-                    </div>
-                    <span>CPCB Authorized Recycler</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="bg-white/20 p-2 rounded-lg">
-                      <Award size={20} />
-                    </div>
-                    <span>ISO 9001 & 14001 Certified</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="bg-white/20 p-2 rounded-lg">
-                      <Recycle size={20} />
-                    </div>
-                    <span>10+ Years Experience</span>
-                  </div>
+              {eprData?.whyChooseUs?.image ? (
+                <div className="w-full aspect-[4/3] bg-white rounded-2xl shadow-xl overflow-hidden">
+                  <img
+                    src={eprData.whyChooseUs.image}
+                    alt="Why Choose Us for EPR"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
-              </Card>
+              ) : (
+                <Card className="bg-[#1A0185] text-white" padding="xl" rounded="3xl">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                    Ready to Get Started?
+                  </h3>
+                  <p className="text-white/90 mb-6 leading-relaxed">
+                    Contact our EPR compliance team for a free consultation. 
+                    We'll help you understand your obligations and create a customized compliance plan.
+                  </p>
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <div className="bg-white/20 p-2 rounded-lg">
+                        <Shield size={20} />
+                      </div>
+                      <span>CPCB Authorized Recycler</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="bg-white/20 p-2 rounded-lg">
+                        <Award size={20} />
+                      </div>
+                      <span>ISO 9001 & 14001 Certified</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="bg-white/20 p-2 rounded-lg">
+                        <Recycle size={20} />
+                      </div>
+                      <span>10+ Years Experience</span>
+                    </div>
+                  </div>
+                </Card>
+              )}
             </div>
           </div>
         </section>

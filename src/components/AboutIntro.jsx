@@ -1,10 +1,13 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import hero from "../assets/images/hero-bg.png";
 import recyclingImg from "../assets/images/recycling.png";
 import { useAboutPage } from "../hooks/useAboutPage";
+import Modal from "./common/Modal";
 
 export default function AboutPage() {
   const { aboutData, loading } = useAboutPage();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   console.log('AboutIntro - aboutData:', aboutData);
   console.log('AboutIntro - intro section:', aboutData?.intro);
@@ -84,7 +87,10 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="mt-10 flex justify-end"
             >
-              <button className="group flex items-center gap-3 rounded-[20px] bg-[#96C2DB] px-9 py-3 text-[14px] font-bold tracking-wide text-[#232f3e] transition-all hover:brightness-95 md:rounded-full">
+              <button 
+                onClick={() => setIsModalOpen(true)}
+                className="group flex items-center gap-3 rounded-[20px] bg-[#96C2DB] px-9 py-3 text-[14px] font-bold tracking-wide text-[#232f3e] transition-all hover:brightness-95 md:rounded-full"
+              >
                 VIEW MORE
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -95,6 +101,62 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Modal for detailed company information */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="About E-Incarnation Recycling"
+        maxWidth="max-w-4xl"
+      >
+        <div className="space-y-6">
+          <div className="prose prose-lg max-w-none">
+            <h3 className="text-xl font-bold text-[#1A0185] mb-4">Our Mission</h3>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              {introData.description1}
+            </p>
+            
+            <h3 className="text-xl font-bold text-[#1A0185] mb-4">Our Approach</h3>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              {introData.description2}
+            </p>
+
+            <h3 className="text-xl font-bold text-[#1A0185] mb-4">Why Choose Us</h3>
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-start gap-3">
+                <span className="text-[#1A0185] font-bold">✓</span>
+                <span>Authorized e-waste recycler with full regulatory compliance</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-[#1A0185] font-bold">✓</span>
+                <span>Certified data destruction ensuring complete confidentiality</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-[#1A0185] font-bold">✓</span>
+                <span>Full traceability and transparent reporting</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-[#1A0185] font-bold">✓</span>
+                <span>Zero landfill commitment with circular economy approach</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-[#1A0185] font-bold">✓</span>
+                <span>Nationwide coverage with secure logistics</span>
+              </li>
+            </ul>
+          </div>
+
+          {introData.image && (
+            <div className="mt-6 rounded-2xl overflow-hidden">
+              <img
+                src={introData.image}
+                alt="E-Incarnation Recycling Facility"
+                className="w-full h-64 object-cover"
+              />
+            </div>
+          )}
+        </div>
+      </Modal>
     </main>
     );
 }

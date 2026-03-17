@@ -55,12 +55,18 @@ export default function WhyChooseUsEPR({ data }) {
               viewport={{ once: true }}
               className="relative"
             >
-              <img
-                src={data.image}
-                alt={data.title || 'Why Choose Us for EPR'}
-                className="w-full h-auto rounded-2xl shadow-xl"
-                loading="lazy"
-              />
+              <div className="w-full aspect-[4/3] bg-white rounded-2xl shadow-xl overflow-hidden">
+                <img
+                  src={data.image}
+                  alt={data.title || 'Why Choose Us for EPR'}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  onError={(e) => {
+                    console.error('Image failed to load:', data.image);
+                    e.target.style.display = 'none';
+                  }}
+                />
+              </div>
             </motion.div>
           )}
         </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import image from "../assets/images/image1.png";
 import image2 from "../assets/images/image2.png";
@@ -7,6 +8,7 @@ import { useServices } from "../hooks/useServices";
 
 const AboutServiceSection = () => {
   const { services, loading, error } = useServices();
+  const navigate = useNavigate();
 
   return (
     <div className="bg-[#f3f3f1] w-full relative overflow-x-hidden font-sans">
@@ -30,7 +32,10 @@ const AboutServiceSection = () => {
             economies, and catalyzing India's growth trajectory.
           </p>
 
-          <button className="mt-2 bg-[#87BBD7] text-black px-6 py-2.5 rounded-full text-sm font-medium inline-flex items-center gap-2 hover:bg-[#76a8c1] transition">
+          <button 
+            onClick={() => navigate('/about')}
+            className="mt-2 bg-[#87BBD7] text-black px-6 py-2.5 rounded-full text-sm font-medium inline-flex items-center gap-2 hover:bg-[#76a8c1] transition"
+          >
             KNOW MORE →
           </button>
         </div>
@@ -127,7 +132,10 @@ const AboutServiceSection = () => {
                 {service.description}
               </p>
 
-              <button className="mt-auto px-4 py-2 rounded-full text-sm font-semibold bg-[#87BBD7] hover:bg-[#1A0185] hover:text-white transition-all duration-300 group-hover:scale-105 flex items-center gap-2">
+              <button 
+                onClick={() => navigate('/contact')}
+                className="mt-auto px-4 py-2 rounded-full text-sm font-semibold bg-[#87BBD7] hover:bg-[#1A0185] hover:text-white transition-all duration-300 group-hover:scale-105 flex items-center gap-2"
+              >
                 Contact Us
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </button>

@@ -273,23 +273,6 @@ const EPRPageManagerNew = () => {
                 rows="3"
               />
             </div>
-            <div>
-              <label className="block text-sm font-bold mb-2">Hero Image</label>
-              <ImageUpload
-                currentImage={eprData?.hero?.image}
-                onImageChange={(imageData) => {
-                  setEprData({
-                    ...eprData,
-                    hero: {
-                      ...eprData.hero,
-                      image: imageData ? imageData.url : '',
-                      imagePublicId: imageData ? imageData.publicId : ''
-                    }
-                  });
-                }}
-                folder="eincarnation/epr/hero"
-              />
-            </div>
             <button type="submit" className="px-6 py-3 bg-[#1A0185] text-white rounded-lg font-bold hover:bg-[#3451A3] flex items-center gap-2">
               <Save size={18} /> Save Hero Section
             </button>
