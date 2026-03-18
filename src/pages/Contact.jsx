@@ -146,6 +146,9 @@ export default function ContactPage() {
   const heroTitle = contactPageData?.heroTitle || 'Start a Conversation';
   const mainAddress = contactPageData?.mainAddress || 'Unit No. 103, 1st Floor, Bhaveshwar Arcade, A Wing, Lal Bahadur Shastri Marg, Mumbai, Maharashtra 400086.';
   const headOfficeAddress = contactPageData?.headOfficeAddress || '';
+  const phone1 = contactPageData?.phone1 || '022 47494262';
+  const phone2 = contactPageData?.phone2 || '9137287173';
+  const email = contactPageData?.email || 'info@e-incarnation.com';
   
   return (
     <>
@@ -225,11 +228,14 @@ export default function ContactPage() {
             <div className="mt-6 space-y-4 text-gray-700">
               <div className="flex items-start gap-4">
                 <Phone size={18} className="text-[#5b7c56] mt-1" />
-                <div className="text-[13px] font-semibold">022 47494262 <br /> 9137287173</div>
+                <div className="text-[13px] font-semibold">
+                  {phone1 || '022 47494262'} 
+                  {phone2 && <><br /> {phone2}</>}
+                </div>
               </div>
               <div className="flex items-center gap-4">
                 <Mail size={18} className="text-[#5b7c56]" />
-                <span className="text-[13px] font-semibold">info@e-incarnation.com</span>
+                <span className="text-[13px] font-semibold">{email || 'info@e-incarnation.com'}</span>
               </div>
             </div>
           </div>

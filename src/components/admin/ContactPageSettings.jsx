@@ -135,6 +135,66 @@ const ContactPageSettings = () => {
           </div>
         </div>
 
+        {/* Contact Information Section */}
+        <div className="border-b pb-8">
+          <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+            <MapPin size={20} className="text-[#1A0185]" />
+            Contact Information
+          </h3>
+          
+          <div className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-2">
+                  Phone Number 1
+                </label>
+                <p className="text-xs text-gray-600 mb-3">
+                  Primary phone number displayed on Contact page
+                </p>
+                <input
+                  type="text"
+                  value={pageData?.phone1 || ''}
+                  onChange={(e) => setPageData({ ...pageData, phone1: e.target.value })}
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#1A0185] focus:outline-none"
+                  placeholder="022 47494262"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-2">
+                  Phone Number 2
+                </label>
+                <p className="text-xs text-gray-600 mb-3">
+                  Secondary phone number displayed on Contact page
+                </p>
+                <input
+                  type="text"
+                  value={pageData?.phone2 || ''}
+                  onChange={(e) => setPageData({ ...pageData, phone2: e.target.value })}
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#1A0185] focus:outline-none"
+                  placeholder="9137287173"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-bold text-gray-700 mb-2">
+                Email Address
+              </label>
+              <p className="text-xs text-gray-600 mb-3">
+                Contact email address displayed on Contact page
+              </p>
+              <input
+                type="email"
+                value={pageData?.email || ''}
+                onChange={(e) => setPageData({ ...pageData, email: e.target.value })}
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#1A0185] focus:outline-none"
+                placeholder="info@e-incarnation.com"
+              />
+            </div>
+          </div>
+        </div>
+
         {/* Google Map Section */}
         <div className="border-b pb-8">
           <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
