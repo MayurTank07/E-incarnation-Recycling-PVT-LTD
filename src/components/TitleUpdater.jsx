@@ -1,20 +1,6 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-
-const TitleUpdater = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    // Force a small delay to ensure React Helmet has processed the new page's SEO component
-    const timer = setTimeout(() => {
-      // This ensures the document title is updated even if React Helmet doesn't trigger immediately
-      // The actual title will be set by the SEO component on each page
-    }, 0);
-
-    return () => clearTimeout(timer);
-  }, [location.pathname]);
-
+// Title and meta are managed per-page via the SEO component.
+// ScrollToTop handles scroll restoration on route change.
+// This component is intentionally a no-op and can be safely removed.
+export default function TitleUpdater() {
   return null;
-};
-
-export default TitleUpdater;
+}

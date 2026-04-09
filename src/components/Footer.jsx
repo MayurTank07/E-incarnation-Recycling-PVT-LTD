@@ -99,10 +99,8 @@ const Footer = () => {
             Support
           </h3>
           <ul className="space-y-3 text-sm text-gray-400 font-medium">
-            <li><a href="#" className="hover:text-white transition-colors">Help center</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Terms of service</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Legal</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Privacy policy</a></li>
+            <li><NavLink to="/terms" className="hover:text-white transition-colors">Terms of service</NavLink></li>
+            <li><NavLink to="/privacy" className="hover:text-white transition-colors">Privacy policy</NavLink></li>
           </ul>
         </nav>
 

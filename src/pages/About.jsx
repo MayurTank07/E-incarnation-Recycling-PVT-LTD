@@ -12,11 +12,12 @@ import Footer from "../components/Footer";
 export default function About() {
   return (
     <>
-      <SEO 
-        title="About Us - E-Incarnation Recycling | Our Mission & Values"
-        description="Learn about E-Incarnation's journey in sustainable e-waste management. Meet our expert team, discover our certifications, and understand our commitment to environmental responsibility."
-        keywords="about e-incarnation, e-waste company history, recycling team, environmental certifications, sustainable practices, company values"
+      <SEO
+        title="About Us - E-Waste Recycling Company in Mumbai | E-Incarnation"
+        description="E-Incarnation is Mumbai's leading e-waste recycling company. Founded in 2020, we offer certified electronic recycling, EPR compliance & IT disposal across Mumbai and India. Meet our expert team."
+        keywords="about e-incarnation, e-waste company Mumbai, recycling company Mumbai, Mumbai recycler, e-waste management history, environmental certifications, sustainable recycling Mumbai"
         canonical="/about"
+        ogImageAlt="About E-Incarnation — E-Waste Recycling Company in Mumbai"
       />
       <BreadcrumbSchema items={[
         { name: 'Home', path: '/' },

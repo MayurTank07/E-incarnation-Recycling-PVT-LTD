@@ -5,9 +5,11 @@ User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /adminlogin
+Disallow: /adminLogin
+Disallow: /admin/dashboard
 
 # Sitemap location
-Sitemap: https://eincarnation.in/sitemap.xml
+Sitemap: https://www.e-incarnation.com/sitemap.xml
 
 # Crawl-delay for better server performance
 Crawl-delay: 1
@@ -17,8 +19,12 @@ User-agent: Googlebot
 Allow: /
 Disallow: /admin
 Disallow: /adminlogin
+Disallow: /adminLogin
+Disallow: /admin/dashboard
 
 User-agent: Bingbot
 Allow: /
 Disallow: /admin
 Disallow: /adminlogin
+Disallow: /adminLogin
+Disallow: /admin/dashboard

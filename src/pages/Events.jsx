@@ -10,11 +10,12 @@ import Footer from "../components/Footer";
 export default function Events() {
   return (
     <>
-      <SEO 
-        title="Events & Workshops - E-Waste Awareness Programs | E-Incarnation"
-        description="Join our e-waste awareness workshops, community recycling drives, and corporate training programs. Learn about sustainable electronics disposal and environmental responsibility."
-        keywords="e-waste events, recycling workshops, awareness programs, community drives, corporate training, environmental education"
+      <SEO
+        title="E-Waste Recycling Events in Mumbai | Community Drives | E-Incarnation"
+        description="Join E-Incarnation's e-waste collection drives and recycling workshops in Mumbai. Community awareness programs for responsible electronic disposal across Mumbai, Maharashtra."
+        keywords="e-waste events Mumbai, recycling drives Mumbai, e-waste collection Mumbai, awareness programs Mumbai, community recycling Mumbai, electronic waste workshop Mumbai"
         canonical="/events"
+        ogImageAlt="E-Waste Recycling Events in Mumbai — E-Incarnation"
       />
       <BreadcrumbSchema items={[
         { name: 'Home', path: '/' },

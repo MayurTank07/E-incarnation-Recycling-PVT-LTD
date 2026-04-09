@@ -1,6 +1,6 @@
 import React from "react";
 import SEO from "../components/SEO";
-import { OrganizationSchema } from "../components/StructuredData";
+import { OrganizationSchema, LocalBusinessSchema, FAQSchema } from "../components/StructuredData";
 import Navbar from "../components/common/Navbar";
 import ScrollSection from "../components/common/ScrollSection";
 import HeroMain from "../components/HeroMain";
@@ -13,13 +13,16 @@ import Footer from "../components/Footer";
 export default function Home() {
   return (
     <>
-      <SEO 
-        title="E-Incarnation Recycling - Leading E-Waste Management & EPR Solutions in India"
-        description="Transform your e-waste into environmental action. Professional EPR compliance, IT asset disposition, and certified electronics recycling services across India. Sustainable waste management solutions."
-        keywords="e-waste recycling India, EPR compliance, IT asset disposition, ITAD services, electronics recycling, e-waste management, sustainable recycling, electronic waste disposal, IT equipment recycling"
+      <SEO
+        title="E-Incarnation - #1 E-Waste Recycling in Mumbai | EPR & Electronic Recycling"
+        description="Leading e-waste recycling company in Mumbai, Maharashtra. Certified electronic recycling, EPR compliance & IT asset disposal. Trusted for responsible e-waste management in Mumbai since 2020."
+        keywords="e-waste recycling Mumbai, electronic recycling Mumbai, recycling in Mumbai, e-waste in Mumbai, e-waste disposal Mumbai, EPR services Mumbai, e-waste management Mumbai, IT asset disposal Mumbai, electronic waste Mumbai, certified recycler Mumbai"
         canonical="/"
+        ogImageAlt="E-Incarnation Recycling — E-Waste Management in Mumbai"
       />
       <OrganizationSchema />
+      <LocalBusinessSchema />
+      <FAQSchema />
       <div className="w-full font-sans bg-[#f3f0e6] min-h-screen">
         <a href="#main-content" className="skip-link">Skip to main content</a>
       <Navbar variant="main" />

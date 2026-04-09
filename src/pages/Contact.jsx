@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { MapPin, Phone, Mail, UserCircle } from "lucide-react";
 import SEO from "../components/SEO";
-import { BreadcrumbSchema } from "../components/StructuredData";
+import { BreadcrumbSchema, LocalBusinessSchema } from "../components/StructuredData";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/Footer";
 import Input from "../components/forms/Input";
@@ -152,16 +152,18 @@ export default function ContactPage() {
   
   return (
     <>
-      <SEO 
-        title="Contact Us - Get in Touch | E-Incarnation Recycling"
-        description="Contact E-Incarnation for professional e-waste management solutions. Reach out for EPR compliance, IT asset disposal, or recycling inquiries. We're here to help."
-        keywords="contact e-incarnation, e-waste inquiry, recycling quote, EPR consultation, IT disposal contact"
+      <SEO
+        title="Contact E-Incarnation - E-Waste Recycling in Mumbai | Get a Free Quote"
+        description="Contact E-Incarnation Recycling in Mumbai for e-waste pickup, EPR compliance, IT asset disposal, or any electronic recycling query. Located at Ghatkopar West, Mumbai 400086."
+        keywords="contact e-incarnation Mumbai, e-waste pickup Mumbai, recycling quote Mumbai, EPR consultation Mumbai, IT disposal Mumbai, electronic recycling contact Mumbai"
         canonical="/contact"
+        ogImageAlt="Contact E-Incarnation — E-Waste Recycling in Mumbai"
       />
       <BreadcrumbSchema items={[
         { name: 'Home', path: '/' },
         { name: 'Contact', path: '/contact' }
       ]} />
+      <LocalBusinessSchema />
       <section className="w-full bg-[#f1efe0] min-h-screen font-sans text-[#333] flex flex-col">
       
       {/* ================= HERO SECTION (MAP) ================= */}

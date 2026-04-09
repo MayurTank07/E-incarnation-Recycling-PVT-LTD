@@ -9,19 +9,20 @@ import Footer from "../components/Footer";
 export default function Services() {
   return (
     <>
-      <SEO 
-        title="Our Services - E-Waste Recycling & IT Asset Disposal | E-Incarnation"
-        description="Comprehensive e-waste management services including EPR compliance, ITAD, secure data destruction, battery recycling, and corporate waste solutions. Certified and environmentally responsible."
-        keywords="e-waste services, EPR compliance India, ITAD services, data destruction, battery recycling, corporate waste management, electronics disposal"
+      <SEO
+        title="E-Waste Recycling Services in Mumbai | Electronic Recycling | E-Incarnation"
+        description="Professional electronic recycling services in Mumbai — EPR compliance, IT asset disposal, secure data destruction, battery recycling & corporate e-waste management. Certified recycler in Mumbai."
+        keywords="e-waste services Mumbai, electronic recycling Mumbai, EPR compliance Mumbai, ITAD Mumbai, data destruction Mumbai, battery recycling Mumbai, corporate e-waste Mumbai, IT disposal Mumbai, e-waste pickup Mumbai"
         canonical="/services"
+        ogImageAlt="E-Waste Recycling Services in Mumbai — E-Incarnation"
       />
       <BreadcrumbSchema items={[
         { name: 'Home', path: '/' },
         { name: 'Services', path: '/services' }
       ]} />
       <ServiceSchema service={{
-        title: 'E-Waste Recycling Services',
-        description: 'Professional e-waste recycling, EPR compliance, and IT asset disposition services'
+        title: 'E-Waste Recycling & Electronic Recycling Services in Mumbai',
+        description: 'Professional e-waste recycling, EPR compliance, IT asset disposition, data destruction, and battery recycling services in Mumbai, Maharashtra'
       }} />
       <main className="w-full">
       <ScrollSection>

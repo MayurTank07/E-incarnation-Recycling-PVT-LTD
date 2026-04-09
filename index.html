@@ -3,26 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
-    
-    <!-- Preconnect to external domains -->
+
+    <!-- Preconnect to external domains for performance -->
     <link rel="preconnect" href="https://res.cloudinary.com" />
     <link rel="dns-prefetch" href="https://res.cloudinary.com" />
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <!-- Google reCAPTCHA v2 -->
     <link rel="preconnect" href="https://www.google.com" />
     <link rel="preconnect" href="https://www.gstatic.com" crossorigin />
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    
-    <!-- Base Meta Tags (will be overridden by React Helmet) -->
-    <title>E-Incarnation Recycling - Professional E-Waste Management & EPR Solutions in India</title>
-    <meta name="description" content="Leading e-waste recycling company in India providing EPR compliance, IT asset disposition, and sustainable electronics recycling services across India." />
+
+    <!-- Base Meta Tags (overridden per-page by React SEO component) -->
+    <title>E-Incarnation - E-Waste Recycling in Mumbai | EPR & Electronic Recycling</title>
+    <meta name="description" content="Leading e-waste recycling company in Mumbai, Maharashtra. Certified electronic recycling, EPR compliance & IT asset disposal. Responsible recycling in Mumbai for homes and businesses." />
+    <meta name="keywords" content="e-waste recycling Mumbai, electronic recycling Mumbai, recycling in Mumbai, e-waste disposal Mumbai, EPR services Mumbai" />
     <meta name="theme-color" content="#1A0185" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+    <!-- Open Graph defaults -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="E-Incarnation Recycling" />
+    <meta property="og:locale" content="en_IN" />
+
+    <!-- Geo targeting -->
+    <meta name="geo.region" content="IN-MH" />
+    <meta name="geo.placename" content="Mumbai, Maharashtra, India" />
+    <meta name="geo.position" content="19.0922584;72.9109548" />
+    <meta name="ICBM" content="19.0922584, 72.9109548" />
   </head>
   <body>
     <div id="root"></div>

@@ -13,6 +13,8 @@ const Services = lazy(() => import("./pages/Services"));
 const EPR = lazy(() => import("./pages/EPR"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
+const TermsOfService = lazy(() => import("./pages/TermsOfService"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 
 // Loading component
 const PageLoader = () => (
@@ -41,6 +43,8 @@ export default function App() {
           <Route path="/adminlogin" element={<AdminLogin />} />
           <Route path="/adminLogin" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/terms" element={<TermsOfService />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
         </Routes>
       </Suspense>
     </Router>
