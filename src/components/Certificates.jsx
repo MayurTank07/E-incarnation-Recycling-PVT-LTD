@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { useAboutPage } from "../hooks/useAboutPage";
 import iso9001 from "../assets/images/iso9001.png";
 import iso14001 from "../assets/images/iso14001.png";
@@ -9,6 +10,7 @@ import decor from "../assets/images/certificates-decor.png";
 
 export default function Certificates() {
   const { aboutData, loading } = useAboutPage();
+  const navigate = useNavigate();
 
   const fallbackCerts = [
     { 
@@ -108,8 +110,11 @@ export default function Certificates() {
               </div>
 
               {/* BUTTON */}
-              <button className="flex items-center gap-2 w-full md:w-fit justify-center md:justify-start rounded-full bg-[#9BC9DF] px-8 py-3 text-[14px] font-bold text-gray-900 transition-all hover:bg-[#8bbbd1] active:scale-95">
-                Download now 
+              <button
+                onClick={() => navigate('/contact')}
+                className="flex items-center gap-2 w-full md:w-fit justify-center md:justify-start rounded-full bg-[#9BC9DF] px-8 py-3 text-[14px] font-bold text-gray-900 transition-all hover:bg-[#8bbbd1] active:scale-95"
+              >
+                Download now
                 <span className="text-lg">→</span>
               </button>
             </motion.div>
