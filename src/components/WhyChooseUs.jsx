@@ -21,8 +21,8 @@ const features = [
   },
   {
     icon: Truck,
-    title: "Free Pickup Across Mumbai",
-    description: "Convenient doorstep e-waste collection service across Mumbai and Maharashtra for corporates, offices, and bulk generators."
+    title: "Free Pickup Across India",
+    description: "We offer hassle-free e-waste collection services across India, ensuring safe and convenient pickup from your location with zero additional cost."
   },
   {
     icon: Recycle,
@@ -31,8 +31,8 @@ const features = [
   },
   {
     icon: Clock,
-    title: "10+ Years of Experience",
-    description: "Trusted by 500+ businesses in Mumbai for safe, certified e-waste recycling and IT asset disposition services since our founding."
+    title: "15+ Years of Experience",
+    description: "With over 15 years of industry experience, we provide reliable and certified e-waste recycling solutions following all environmental and safety standards."
   }
 ];
 
