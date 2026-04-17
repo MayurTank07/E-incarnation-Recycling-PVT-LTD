@@ -13,11 +13,11 @@ export default function About() {
   return (
     <>
       <SEO
-        title="About Us - E-Waste Recycling Company in Mumbai | E-Incarnation"
-        description="E-Incarnation is Mumbai's leading e-waste recycling company. Founded in 2020, we offer certified electronic recycling, EPR compliance & IT disposal across Mumbai and India. Meet our expert team."
-        keywords="about e-incarnation, e-waste company Mumbai, recycling company Mumbai, Mumbai recycler, e-waste management history, environmental certifications, sustainable recycling Mumbai"
+        title="About Us | Best E-Waste Recycling Company in Mumbai - E-Incarnation"
+        description="E-Incarnation is Mumbai's best e-waste recycling company. CPCB authorized, ISO certified. We offer eco-friendly e-waste disposal, EPR compliance & IT asset recycling across Mumbai and India."
+        keywords="about e-incarnation, e waste recycling in Mumbai, best e waste recycling in Mumbai, e waste management company Mumbai, e-waste recycler Mumbai, CPCB authorized recycler, ISO certified recycling Mumbai"
         canonical="/about"
-        ogImageAlt="About E-Incarnation — E-Waste Recycling Company in Mumbai"
+        ogImageAlt="About E-Incarnation — Best E-Waste Recycling Company in Mumbai"
       />
       <BreadcrumbSchema items={[
         { name: 'Home', path: '/' },

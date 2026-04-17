@@ -22,14 +22,12 @@ const AboutServiceSection = () => {
             ABOUT US
           </h4>
 
-          <h1 className="font-bold text-[#1A0185] text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-snug sm:leading-tight mb-4 sm:mb-6">
+          <h2 className="font-bold text-[#1A0185] text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-snug sm:leading-tight mb-4 sm:mb-6">
             Pioneering a <br /> Greener Tomorrow
-          </h1>
+          </h2>
 
           <p className="text-[#060C0C] text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed mb-5 sm:mb-6 max-w-full md:max-w-[460px] pr-0 md:pr-8">
-            With a resolute commitment to transforming waste into wealth, we're
-            not just recycling; we're rejuvenating industries, supporting local
-            economies, and catalyzing India's growth trajectory.
+            As Mumbai's leading e-waste recycling company, we are committed to transforming electronic waste into valuable resources. Our certified, eco-friendly disposal services help businesses and individuals recycle responsibly while protecting the environment.
           </p>
 
           <button 
@@ -81,13 +79,12 @@ const AboutServiceSection = () => {
             SERVICES
           </h4>
 
-          <h1 className="font-bold text-[#1A0185] text-3xl sm:text-4xl md:text-5xl mb-1 sm:mb-3 leading-tight">
-            Our Recycling Services
-          </h1>
+          <h2 className="font-bold text-[#1A0185] text-3xl sm:text-4xl md:text-5xl mb-1 sm:mb-3 leading-tight">
+            Our E-Waste Recycling Services
+          </h2>
 
           <p className="text-[#060C0C] max-w-xl text-[14px] sm:text-[15px] md:text-[16px] leading-snug sm:leading-relaxed">
-            With a resolute commitment to transforming waste into wealth, we're
-            not just recycling; we're rejuvenating industries.
+            Comprehensive e-waste management solutions in Mumbai — from collection and recycling to EPR compliance and certified data destruction.
           </p>
         </div>
 

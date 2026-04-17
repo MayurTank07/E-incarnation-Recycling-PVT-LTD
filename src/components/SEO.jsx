@@ -1,9 +1,9 @@
 import { API_CONFIG } from '../config/api.config';
 
 export const SEO = ({
-  title = 'E-Incarnation - E-Waste Recycling in Mumbai | EPR & Electronic Recycling',
-  description = 'Leading e-waste recycling company in Mumbai, Maharashtra. Certified electronic recycling, EPR compliance & IT asset disposal. Responsible recycling in Mumbai for homes and businesses.',
-  keywords = 'e-waste recycling Mumbai, electronic recycling Mumbai, recycling in Mumbai, e-waste disposal Mumbai, EPR services Mumbai, e-waste management Mumbai, IT asset disposition Mumbai',
+  title = 'E Waste Recycling in Mumbai | Best E-Waste Management Company - E-Incarnation',
+  description = 'Best e-waste recycling company in Mumbai. E-Incarnation offers certified, eco-friendly e-waste disposal, EPR compliance & IT asset recycling. CPCB authorized recycler in Mumbai, Maharashtra.',
+  keywords = 'e waste recycling in Mumbai, best e waste recycling in Mumbai, e waste management company Mumbai, e-waste disposal Mumbai, e-waste recycler Mumbai, electronic waste recycling Mumbai, EPR services Mumbai, IT asset disposal Mumbai, CPCB authorized recycler Mumbai',
   canonical = '',
   ogType = 'website',
   ogImage = '/og-image.jpg',

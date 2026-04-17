@@ -7,6 +7,7 @@ import HeroMain from "../components/HeroMain";
 import AboutServicesSection from "../components/AboutServiceSection";
 import ClientHybrid from "../components/ClientHybrid";
 import Review from "../components/Review";
+import WhyChooseUs from "../components/WhyChooseUs";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 
@@ -14,11 +15,11 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="E-Incarnation - #1 E-Waste Recycling in Mumbai | EPR & Electronic Recycling"
-        description="Leading e-waste recycling company in Mumbai, Maharashtra. Certified electronic recycling, EPR compliance & IT asset disposal. Trusted for responsible e-waste management in Mumbai since 2020."
-        keywords="e-waste recycling Mumbai, electronic recycling Mumbai, recycling in Mumbai, e-waste in Mumbai, e-waste disposal Mumbai, EPR services Mumbai, e-waste management Mumbai, IT asset disposal Mumbai, electronic waste Mumbai, certified recycler Mumbai"
+        title="E Waste Recycling in Mumbai | Best E-Waste Management Company - E-Incarnation"
+        description="Best e-waste recycling company in Mumbai. E-Incarnation provides certified, eco-friendly e-waste disposal, EPR compliance, IT asset recycling & data destruction. CPCB authorized recycler in Mumbai, Maharashtra."
+        keywords="e waste recycling in Mumbai, best e waste recycling in Mumbai, e waste management company Mumbai, e-waste disposal Mumbai, e-waste recycler Mumbai, electronic waste recycling Mumbai, EPR services Mumbai, IT asset disposal Mumbai, CPCB authorized recycler Mumbai, e waste company Mumbai"
         canonical="/"
-        ogImageAlt="E-Incarnation Recycling — E-Waste Management in Mumbai"
+        ogImageAlt="E-Incarnation — Best E-Waste Recycling Company in Mumbai"
       />
       <OrganizationSchema />
       <LocalBusinessSchema />
@@ -41,6 +42,11 @@ export default function Home() {
         {/* Client Logos - Consistent spacing */}
         <ScrollSection delay={0.1}>
           <ClientHybrid />
+        </ScrollSection>
+
+        {/* Why Choose Us - SEO keyword content */}
+        <ScrollSection delay={0.1}>
+          <WhyChooseUs />
         </ScrollSection>
 
         {/* Testimonials - Balanced spacing */}

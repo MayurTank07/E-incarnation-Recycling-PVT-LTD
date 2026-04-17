@@ -19,9 +19,9 @@ export default function EPR() {
   const seoData = (
     <>
       <SEO
-        title="EPR Services Mumbai - Extended Producer Responsibility | E-Incarnation"
-        description="Certified EPR compliance services in Mumbai. Get CPCB EPR authorization, annual reporting & end-to-end e-waste collection. India's trusted Extended Producer Responsibility solutions provider."
-        keywords="EPR services Mumbai, extended producer responsibility India, EPR authorization CPCB, e-waste EPR Mumbai, producer responsibility India, EPR compliance Mumbai, e-waste compliance India"
+        title="EPR Services Mumbai | E-Waste EPR Authorization & Compliance - E-Incarnation"
+        description="Certified EPR compliance services in Mumbai. CPCB EPR authorization, annual reporting & end-to-end e-waste collection. Best e-waste management company Mumbai for Extended Producer Responsibility."
+        keywords="EPR services Mumbai, e waste recycling in Mumbai, extended producer responsibility India, EPR authorization CPCB, e waste management company Mumbai, EPR compliance Mumbai, e-waste collection Mumbai"
         canonical="/epr"
         ogImageAlt="EPR Services in Mumbai — Extended Producer Responsibility — E-Incarnation"
       />

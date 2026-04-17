@@ -153,11 +153,11 @@ export default function ContactPage() {
   return (
     <>
       <SEO
-        title="Contact E-Incarnation - E-Waste Recycling in Mumbai | Get a Free Quote"
-        description="Contact E-Incarnation Recycling in Mumbai for e-waste pickup, EPR compliance, IT asset disposal, or any electronic recycling query. Located at Ghatkopar West, Mumbai 400086."
-        keywords="contact e-incarnation Mumbai, e-waste pickup Mumbai, recycling quote Mumbai, EPR consultation Mumbai, IT disposal Mumbai, electronic recycling contact Mumbai"
+        title="Contact Us | Best E-Waste Recycling Company in Mumbai - E-Incarnation"
+        description="Contact E-Incarnation for e-waste recycling in Mumbai. Free e-waste pickup, EPR compliance, IT asset disposal & certified electronic recycling. Best e-waste management company in Mumbai, Maharashtra."
+        keywords="contact e-incarnation Mumbai, e waste recycling in Mumbai, best e waste recycling in Mumbai, e waste management company Mumbai, e-waste pickup Mumbai, EPR consultation Mumbai, e-waste disposal Mumbai"
         canonical="/contact"
-        ogImageAlt="Contact E-Incarnation — E-Waste Recycling in Mumbai"
+        ogImageAlt="Contact E-Incarnation — Best E-Waste Recycling in Mumbai"
       />
       <BreadcrumbSchema items={[
         { name: 'Home', path: '/' },

@@ -41,70 +41,75 @@ export default function Certificates() {
 
   if (loading) {
     return (
-      <section className="bg-[#EBE8D7] py-16 md:py-28 flex items-center justify-center">
+      <section className="bg-[#EBE8D7] py-16 md:py-20 flex items-center justify-center">
         <div className="animate-spin rounded-full h-12 w-12 border-4 border-gray-300 border-t-[#1A0185]"></div>
       </section>
     );
   }
 
   return (
-    <section className="bg-[#EBE8D7] py-16 md:py-28 relative overflow-hidden font-sans">
+    <section className="bg-[#EBE8D7] py-14 md:py-20 relative overflow-hidden font-sans">
       
-      {/* Decorative Image - Adjusted for mobile visibility */}
+      {/* Decorative Image */}
       <img
         src={decor}
         alt=""
-        className="absolute top-0 right-0 w-[150px] md:w-[260px] opacity-40 md:opacity-100 pointer-events-none select-none"
+        aria-hidden="true"
+        className="absolute top-0 right-0 w-[120px] md:w-[200px] opacity-30 md:opacity-80 pointer-events-none select-none"
       />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
 
         {/* HEADER */}
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="mb-12 md:mb-20"
+          className="mb-8 md:mb-12"
         >
-          <p className="text-xs md:text-sm font-semibold uppercase tracking-[0.2em] text-black mb-2">
+          <p className="text-[10px] md:text-xs font-semibold uppercase tracking-[0.25em] text-black/60 mb-1">
             OUR
           </p>
-          <h1 className="text-4xl md:text-[52px] font-bold text-[#1e1494] leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-[44px] font-bold text-[#1e1494] leading-tight">
             Certificates
-          </h1>
+          </h2>
+          <p className="text-sm md:text-[15px] text-gray-600 mt-2 max-w-xl">
+            Industry-recognized certifications that validate our commitment to quality and environmental responsibility.
+          </p>
         </motion.div>
 
         {/* CARDS GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
           {certs.map((c, index) => (
             <motion.div
               key={c.id || c._id}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.4, delay: index * 0.08 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-              className="bg-[#F4F3EF] rounded-[24px] md:rounded-[32px] p-6 md:p-10 flex flex-col justify-between shadow-sm border border-white/30"
+              whileHover={{ y: -4, boxShadow: "0 12px 32px rgba(26, 1, 133, 0.1)", transition: { duration: 0.25 } }}
+              className="bg-[#F4F3EF] rounded-2xl md:rounded-3xl p-5 md:p-7 flex flex-col justify-between shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-white/40 hover:border-[#9BC9DF]/40 transition-colors duration-300"
             >
               
               {/* CARD HEADER */}
               <div>
-                <div className="flex items-center justify-between mb-6 md:mb-10">
-                  <div className="w-20 h-20 md:w-28 md:h-28 bg-white rounded-full flex items-center justify-center shadow-sm overflow-hidden flex-shrink-0">
+                <div className="flex items-center gap-4 mb-4 md:mb-5">
+                  <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-xl flex items-center justify-center shadow-sm overflow-hidden flex-shrink-0 p-2">
                     <img
                       src={c.logo}
-                      alt={c.id || c.name}
-                      className="w-full h-full object-contain p-2"
+                      alt={`${c.id || c.name} certification`}
+                      className="w-full h-full object-contain"
+                      loading="lazy"
                     />
                   </div>
-                  <h3 className="text-xl md:text-[26px] font-bold text-[#2d3e50] ml-4 text-right">
+                  <h3 className="text-lg md:text-xl font-bold text-[#1A0185]">
                     {c.id || c.name}
                   </h3>
                 </div>
 
                 {/* DESCRIPTION */}
-                <p className="text-[14px] md:text-[15px] leading-relaxed text-gray-700 md:text-justify mb-8 md:mb-10">
+                <p className="text-[13px] md:text-sm leading-relaxed text-gray-600 mb-5 md:mb-6">
                   {c.text || c.description}
                 </p>
               </div>
@@ -112,10 +117,10 @@ export default function Certificates() {
               {/* BUTTON */}
               <button
                 onClick={() => navigate('/contact')}
-                className="flex items-center gap-2 w-full md:w-fit justify-center md:justify-start rounded-full bg-[#9BC9DF] px-8 py-3 text-[14px] font-bold text-gray-900 transition-all hover:bg-[#8bbbd1] active:scale-95"
+                className="flex items-center gap-2 w-fit rounded-full bg-[#9BC9DF] px-6 py-2.5 text-[13px] font-bold text-gray-900 transition-all duration-300 hover:bg-[#1A0185] hover:text-white hover:shadow-md active:scale-95"
               >
-                Download now
-                <span className="text-lg">→</span>
+                Get in Touch
+                <span className="text-base transition-transform duration-300 group-hover:translate-x-1">→</span>
               </button>
             </motion.div>
           ))}

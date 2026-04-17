@@ -60,7 +60,7 @@ const HeroMain = () => {
                 <div className="absolute -inset-10 bg-[#87BBD7]/20 rounded-full blur-3xl opacity-50" />
                 <img
                   src={heroImage}
-                  alt="Sustainable Nature"
+                  alt="E-waste recycling in Mumbai - E-Incarnation sustainable recycling"
                   className="relative z-10 w-full h-auto object-contain drop-shadow-xl"
                 />
               </div>
@@ -106,7 +106,7 @@ const HeroMain = () => {
               />
               <img
                 src={heroImage}
-                alt="Sustainable Nature"
+                alt="Best e-waste recycling company in Mumbai - E-Incarnation Recycling"
                 className="relative z-10 w-full h-auto object-contain drop-shadow-2xl"
               />
             </div>

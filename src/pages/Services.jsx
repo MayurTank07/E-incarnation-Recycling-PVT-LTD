@@ -10,11 +10,11 @@ export default function Services() {
   return (
     <>
       <SEO
-        title="E-Waste Recycling Services in Mumbai | Electronic Recycling | E-Incarnation"
-        description="Professional electronic recycling services in Mumbai — EPR compliance, IT asset disposal, secure data destruction, battery recycling & corporate e-waste management. Certified recycler in Mumbai."
-        keywords="e-waste services Mumbai, electronic recycling Mumbai, EPR compliance Mumbai, ITAD Mumbai, data destruction Mumbai, battery recycling Mumbai, corporate e-waste Mumbai, IT disposal Mumbai, e-waste pickup Mumbai"
+        title="E-Waste Recycling Services in Mumbai | Certified E-Waste Disposal - E-Incarnation"
+        description="Professional e-waste recycling services in Mumbai. EPR compliance, IT asset disposal, secure data destruction, battery recycling & corporate e-waste management. Best e-waste management company Mumbai."
+        keywords="e waste recycling in Mumbai, e-waste services Mumbai, best e waste recycling in Mumbai, e waste management company Mumbai, EPR compliance Mumbai, IT asset disposal Mumbai, data destruction Mumbai, e-waste pickup Mumbai, certified e-waste disposal Mumbai"
         canonical="/services"
-        ogImageAlt="E-Waste Recycling Services in Mumbai — E-Incarnation"
+        ogImageAlt="Best E-Waste Recycling Services in Mumbai — E-Incarnation"
       />
       <BreadcrumbSchema items={[
         { name: 'Home', path: '/' },
