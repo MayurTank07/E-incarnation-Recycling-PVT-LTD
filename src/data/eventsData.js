@@ -1,4 +1,4 @@
-import eventImage from "../assets/images/events.png";
+import eventImage from "../assets/images/events-optimized.webp";
 
 export const eventsData = [
   { 

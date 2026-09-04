@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTestimonials } from "../hooks/useTestimonials";
 import butterfly from "../assets/images/butterfly.png";
-import human from "../assets/images/human.png";
-import testi1 from "../assets/images/testi1.png";
-import testi2 from "../assets/images/testi2.png";
-import testi3 from "../assets/images/testi3.png";
-import testi4 from "../assets/images/testi4.png";
+import human from "../assets/images/human-optimized.webp";
+import testi1 from "../assets/images/testi1-optimized.webp";
+import testi2 from "../assets/images/testi2-optimized.webp";
+import testi3 from "../assets/images/testi3-optimized.webp";
+import testi4 from "../assets/images/testi4-optimized.webp";
 
 const fallbackReviews = [
   {
@@ -151,6 +151,8 @@ export default function ClientTestimonials() {
                       src={Review[current].avatar}
                       alt={Review[current].name}
                       className="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover ring-4 ring-[#EEEBD9] flex-shrink-0"
+                      loading="lazy"
+                      decoding="async"
                     />
                     <div className="text-left min-w-0 flex-1">
                       <p className="font-bold text-sm sm:text-lg text-[#1A0185] truncate">

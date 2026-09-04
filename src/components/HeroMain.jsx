@@ -1,30 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import heroImage from "../assets/images/hero.png";
+import heroImage from "../assets/images/hero-optimized.webp";
 import { useHeroStats } from "../hooks/useHeroStats";
 import { useCounterAnimation } from "../hooks/useCounterAnimation";
 
 const HeroMain = () => {
   const navigate = useNavigate();
-  const { stats, loading } = useHeroStats();
+  const { stats } = useHeroStats();
   
   // Counter animations for stats (1200ms for faster counting)
   // Only start animation after data is loaded
   const recyclingCounter = useCounterAnimation(stats.recycling, 1200);
   const reuseCounter = useCounterAnimation(stats.reuse, 1200);
   const forecastCounter = useCounterAnimation(stats.forecast2026, 1200);
-  
-  // Show loading state while fetching data
-  if (loading) {
-    return (
-      <section className="relative w-full bg-[#D7E8F2] overflow-hidden pt-24 sm:pt-20 md:pt-24">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-24 pt-6 sm:pt-8 md:pt-10 pb-20 md:pb-24 lg:pb-28 min-h-screen flex items-center justify-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-4 border-gray-300 border-t-[#1A0185]"></div>
-        </div>
-      </section>
-    );
-  }
   
   return (
     <section className="relative w-full bg-[#D7E8F2] overflow-hidden pt-24 sm:pt-20 md:pt-24">
@@ -61,6 +50,11 @@ const HeroMain = () => {
                 <img
                   src={heroImage}
                   alt="E-waste recycling in Mumbai - E-Incarnation sustainable recycling"
+                  width="1532"
+                  height="1600"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
                   className="relative z-10 w-full h-auto object-contain drop-shadow-xl"
                 />
               </div>
@@ -107,6 +101,11 @@ const HeroMain = () => {
               <img
                 src={heroImage}
                 alt="Best e-waste recycling company in Mumbai - E-Incarnation Recycling"
+                width="1532"
+                height="1600"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
                 className="relative z-10 w-full h-auto object-contain drop-shadow-2xl"
               />
             </div>

@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import image from "../assets/images/image1.png";
-import image2 from "../assets/images/image2.png";
-import image3 from "../assets/images/image3.png";
+import image from "../assets/images/image1-optimized.webp";
+import image2 from "../assets/images/image2-optimized.webp";
+import image3 from "../assets/images/image3-optimized.webp";
 import { useServices } from "../hooks/useServices";
 
 const AboutServiceSection = () => {
@@ -41,14 +41,20 @@ const AboutServiceSection = () => {
         {/* RIGHT BIG SEMI-CIRCLE - Hidden on mobile, visible on md+ */}
         <div
           className="hidden md:block absolute top-0 -right-5 w-[25%] h-[1000px] rounded-l-[100%_50%] overflow-hidden z-0"
-          style={{
-            backgroundImage: `url(${image})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
           role="img"
           aria-label="E-waste recycling facility"
-        />
+        >
+          <img
+            src={image}
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover object-center"
+            loading="lazy"
+            decoding="async"
+            width="325"
+            height="1100"
+          />
+        </div>
 
         {/* CENTER CIRCLE - Adjusted positioning for mobile */}
         <div className="hidden md:block absolute right-[12%] top-[360px] w-68 h-68 rounded-full overflow-hidden z-30">
@@ -57,6 +63,9 @@ const AboutServiceSection = () => {
             className="w-full h-full object-cover"
             alt="Recycling process in action"
             loading="lazy"
+            decoding="async"
+            width="600"
+            height="600"
           />
         </div>
 
@@ -67,6 +76,9 @@ const AboutServiceSection = () => {
             className="w-full h-full object-cover"
             alt="Waste collection and sorting"
             loading="lazy"
+            decoding="async"
+            width="310"
+            height="600"
           />
         </div>
       </section>
@@ -115,6 +127,8 @@ const AboutServiceSection = () => {
                     src={service.icon} 
                     alt={service.title} 
                     className="w-full h-full object-contain invert" 
+                    loading="lazy"
+                    decoding="async"
                   />
                 ) : (
                   <div className="bg-gray-400 w-full h-full rounded-full" />
