@@ -14,33 +14,52 @@ const AboutServiceSection = () => {
     <div className="bg-[#f3f3f1] w-full relative overflow-x-hidden font-sans">
       
       {/* ================= ABOUT US ================= */}
-      <section className="relative pt-28 sm:pt-24 md:pt-28 lg:pt-32 px-6 sm:px-10 md:px-20 lg:px-32 flex flex-col md:flex-row items-start min-h-[600px] md:min-h-[820px]">
+      <section className="relative pt-24 sm:pt-24 md:pt-28 lg:pt-32 pb-20 md:pb-24 xl:pb-0 xl:min-h-[820px]">
         
         {/* LEFT CONTENT */}
-        <div className="w-full md:w-1/2 z-20 mt-0 md:mt-0 mb-8 md:mb-0">
-          <h4 className="text-[#060C0C] font-semibold text-xs sm:text-sm tracking-[0.15em] mb-1">
-            ABOUT US
-          </h4>
+        <div className="relative z-20 mx-auto max-w-[1180px] px-6 sm:px-10 md:px-16 lg:px-20">
+          <div className="w-full md:w-[74%] lg:w-[58%] xl:w-[50%] mt-0 md:mt-4 lg:mt-8 mb-8 md:mb-0">
+            <h4 className="text-[#060C0C] font-semibold text-xs sm:text-sm tracking-[0.22em] mb-3">
+              ABOUT US
+            </h4>
 
-          <h2 className="font-bold text-[#1A0185] text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-snug sm:leading-tight mb-4 sm:mb-6">
-            Pioneering a <br /> Greener Tomorrow
-          </h2>
+            <h2 className="font-bold text-[#1A0185] text-3xl sm:text-4xl md:text-5xl lg:text-[3.45rem] leading-[1.12] mb-5 sm:mb-6">
+              Pioneering a <br /> Greener Tomorrow
+            </h2>
 
-          <p className="text-[#060C0C] text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed mb-5 sm:mb-6 max-w-full md:max-w-[460px] pr-0 md:pr-8">
-            As Mumbai's leading e-waste recycling company, we are committed to transforming electronic waste into valuable resources. Our certified, eco-friendly disposal services help businesses and individuals recycle responsibly while protecting the environment.
-          </p>
+            <p className="text-[#060C0C] text-[15px] md:text-[17px] leading-relaxed mb-4 max-w-full md:max-w-[560px] pr-0 md:pr-6">
+              As Mumbai's leading e-waste recycling company, we are committed to transforming electronic waste into valuable resources. Our certified, eco-friendly disposal services help businesses and individuals recycle responsibly while protecting the environment.
+            </p>
 
-          <button 
-            onClick={() => navigate('/about')}
-            className="mt-2 bg-[#87BBD7] text-black px-6 py-2.5 rounded-full text-sm font-medium inline-flex items-center gap-2 hover:bg-[#76a8c1] transition"
-          >
-            KNOW MORE →
-          </button>
+            <p className="text-[#394242] text-[14px] md:text-[15px] leading-relaxed mb-6 max-w-full md:max-w-[520px] pr-0 md:pr-8">
+              From safe collection to responsible recycling, every step is handled with care, compliance, and a clear focus on reducing landfill waste.
+            </p>
+
+            <button 
+              onClick={() => navigate('/about')}
+              className="bg-[#87BBD7] text-black px-7 py-3 rounded-full text-sm font-semibold inline-flex items-center gap-2 hover:bg-[#76a8c1] transition shadow-[0_12px_24px_rgba(30,71,89,0.12)]"
+            >
+              KNOW MORE →
+            </button>
+          </div>
         </div>
 
-        {/* RIGHT BIG SEMI-CIRCLE - Hidden on mobile, visible on md+ */}
+        {/* LEFT EDGE ACCENT - Desktop only */}
+        <div className="hidden 2xl:block absolute -left-7 top-[455px] w-52 h-80 rounded-r-full overflow-hidden z-10 shadow-[18px_0_40px_rgba(6,12,12,0.1)]">
+          <img
+            src={image3}
+            className="w-full h-full object-cover object-center"
+            alt="Waste collection and sorting"
+            loading="lazy"
+            decoding="async"
+            width="310"
+            height="600"
+          />
+        </div>
+
+        {/* RIGHT BIG SEMI-CIRCLE - Desktop only */}
         <div
-          className="hidden md:block absolute top-0 -right-5 w-[25%] h-[1000px] rounded-l-[100%_50%] overflow-hidden z-0"
+          className="hidden xl:block absolute top-0 -right-5 w-[25vw] max-w-[520px] h-[920px] rounded-l-[100%_50%] overflow-hidden z-0 shadow-[-18px_0_48px_rgba(6,12,12,0.08)]"
           role="img"
           aria-label="E-waste recycling facility"
         >
@@ -57,7 +76,7 @@ const AboutServiceSection = () => {
         </div>
 
         {/* CENTER CIRCLE - Adjusted positioning for mobile */}
-        <div className="hidden md:block absolute right-[12%] top-[360px] w-68 h-68 rounded-full overflow-hidden z-30">
+        <div className="hidden xl:block absolute right-[17vw] top-[355px] w-56 h-56 rounded-full overflow-hidden z-30 border-[14px] border-white shadow-2xl">
           <img
             src={image2}
             className="w-full h-full object-cover"
@@ -69,33 +88,21 @@ const AboutServiceSection = () => {
           />
         </div>
 
-        {/* LEFT SEMI-CIRCLE - Hidden on mobile */}
-        <div className="hidden md:block absolute -left-5 top-[420px] w-44 h-72 rounded-r-full overflow-hidden z-10">
-          <img
-            src={image3}
-            className="w-full h-full object-cover"
-            alt="Waste collection and sorting"
-            loading="lazy"
-            decoding="async"
-            width="310"
-            height="600"
-          />
-        </div>
       </section>
 
       {/* ================= SERVICES ================= */}
-      <section className="relative px-6 sm:px-10 md:px-20 lg:px-32 -mt-50 sm:-mt-30 pt-4 sm:pt-0 pb-16 sm:pb-20 md:pb-24 z-10">
+      <section className="relative mx-auto max-w-[1120px] px-6 sm:px-10 md:px-16 lg:px-20 mt-4 md:mt-6 xl:mt-0 pt-4 sm:pt-0 pb-16 sm:pb-20 md:pb-24 z-10">
         
-        <div className="mb-4 sm:mb-10">
+        <div className="mb-6 sm:mb-10 max-w-3xl">
           <h4 className="text-[#060C0C] font-semibold text-[10px] sm:text-sm tracking-[0.15em] mb-1 uppercase opacity-70">
             SERVICES
           </h4>
 
-          <h2 className="font-bold text-[#1A0185] text-3xl sm:text-4xl md:text-5xl mb-1 sm:mb-3 leading-tight">
+          <h2 className="font-bold text-[#1A0185] text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] mb-1 sm:mb-3 leading-tight">
             Our E-Waste Recycling Services
           </h2>
 
-          <p className="text-[#060C0C] max-w-xl text-[14px] sm:text-[15px] md:text-[16px] leading-snug sm:leading-relaxed">
+          <p className="text-[#060C0C] max-w-2xl text-[14px] sm:text-[15px] md:text-[16px] leading-snug sm:leading-relaxed">
             Comprehensive e-waste management solutions in Mumbai — from collection and recycling to EPR compliance and certified data destruction.
           </p>
         </div>
